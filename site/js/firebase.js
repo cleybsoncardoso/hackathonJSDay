@@ -36,6 +36,11 @@ function signIN(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         console.log(error);
         signIN(email, password);
+        getDadosUser((userResp)=>{
+            if(userResp){
+                
+            }
+        });
     });
 }
 
@@ -54,6 +59,8 @@ function getDados(callback) {
         for (var key in snapshot.val()) {
             arr.push(snapshot.val()[key]);
         }
+        console.log(arr);
         callback(arr);
+
     });
 }
