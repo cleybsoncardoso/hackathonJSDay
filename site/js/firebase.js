@@ -34,8 +34,8 @@ function createUser(email, password) {
 
 function signIN(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-
-        firebase.auth().onAuthStateChanged(function (user) {
+    });
+    firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 window.location.href = "loged.html";
             } else {
@@ -43,7 +43,6 @@ function signIN(email, password) {
                 // No user is signed in.
             }
         });
-    });
 }
 
 function getDadosUser(callback) {
