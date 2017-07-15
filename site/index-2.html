@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <title>Snow Landing Page Theme | Created By Visual Soldiers</title>
+  <title>Laros</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -36,44 +36,66 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+          <a class="logo" href="index.html"><img src="img/LarosLogo.png" alt="Logo"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#pricing" class="scroll">Pricing</a></li>
-            <li><a href="#">Sign in</a></li>
+            <li><a href="#cadastro" class="scroll">Cadastro</a></li>
+            <li><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-        
+    <div id="LoginModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="title-modal wow fadeInDown">
+                    <h2 class="section-title">Login</h2>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 form-group">
+                            <input class="form-control input-lg" type="text" placeholder="E-mail">
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <input class="form-control input-lg input-block" type="password" placeholder="Senha">
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 form-group">
+                            <a class="btn btn-lg btn-primary btn-block">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
       <div class="container">
         <div class="row">
           <div class="col-xs-6">
-            <a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+            <a class="logo2" href="index.html"><img src="img/LarosLogo.png" alt="Logo"></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
-            <a href="#pricing" class="scroll">Pricing</a>&nbsp; &nbsp;<a href="#">Sign in</a>
+            <a href="#cadastro" class="scroll">Cadastro</a>&nbsp; &nbsp;<a data-toggle="modal" data-target="#LoginModal">Login</a>
           </div>
         </div>
         
         <div class="row header-info">
           <div class="col-sm-10 col-sm-offset-1 text-center">
-            <h1 class="wow fadeIn">A free landing page theme</h1>
+            <h1 class="wow fadeIn">Um portal para quem tem bom coração</h1>
             <br />
-            <p class="lead wow fadeIn" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipis. <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit sit dol mi arlna.</p>
+            <p class="lead wow fadeIn" data-wow-delay="0.5s">Quer fazer uma doação? Encontre aqui a ONG perfeita
+              para você fazer suas doações.
+            </p>
             <br />
               
             <div class="row">
               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="row">
                   <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Learn More</a>
+                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Encontre uma ONG</a>
                   </div>
                   <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                    <a href="#invite" class="btn btn-primary btn-lg scroll">Request Invite</a>
+                    <a href="#invite" class="btn btn-primary btn-lg scroll">Cadastre sua ONG</a>
                   </div>
                 </div><!--End Button Row-->  
               </div>
@@ -88,151 +110,78 @@
 				<div class="scroll"></div>
 			</div>
     
-    <section id="be-the-first" class="pad-xl">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
-            <h2>Be the first</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipis.</p>
-          </div>
-        </div>
-        
-        <div class="iphone wow fadeInUp" data-wow-delay="1s">
-	        <img src="img/iphone.png">
-        </div>
-      </div>
-    </section>
-    
     <section id="main-info" class="pad-xl">
 	    <div class="container">
+        <div class="row title-box">
+          <h2>Principais ONGS</h2>
+        </div>
 		    <div class="row">
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
-				    <hr class="line purple">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
-			    </div>
+            <img src="img/wwf.jpg" alt="">
+				    <hr class="line blue">
+				    <h3>WWF</h3>
+				    <p> O WWF-Brasil é uma ONG brasileira, participante de uma rede internacional e comprometida com a conservação da natureza dentro do contexto social e econômico brasileiro;</p>
+            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>
+          </div>
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <img src="img/greenpeace.jpg" alt="">            
 				    <hr  class="line blue">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
-			    </div>
+				    <h3>GREENPEACE</h3>
+				    <p>O Greenpeace chegou ao Brasil no mesmo ano em que o país abrigou a primeira e mais importante conferência ambiental da História, a Eco-92.</p>
+            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>            
+          </div>
 			    <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
-				    <hr  class="line yellow">
-				    <h3>App Feature One Here</h3>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut est facilisis, eu elementum mi volutpat. Pellentesque ac tristique nisi.</p>
-			    </div>
+            <img src="img/unicef.jpg" alt="">            
+				    <hr  class="line blue">
+				    <h3>UNICEF</h3>
+				    <p>O UNICEF acredita que, por meio da ação conjunta, é possível superar as iniquidades que ainda impedem o desenvolvimento pleno de meninas e meninos no Brasil.</p>
+            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>            
+          </div>
 		    </div>
 	    </div>
     </section>
-        
-        
-    <!--Pricing-->
-    <section id="pricing" class="pad-lg">
-      <div class="container">
-        <div class="row margin-40">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <h2 class="white">Pricing</h2>
-            <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
-          </div>
-        </div>
-        
-        <div class="row margin-50">
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Personal</h5></li>
-    					<li class="price"><div class="amount">$5<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="0.4s">
-            <ul class="list-unstyled pricing-table active text-center">
-    					<li class="headline"><h5 class="white">Professional</h5></li>
-    					<li class="price"><div class="amount">$12<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1.3s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Business</h5></li>
-    					<li class="price"><div class="amount">$24<small>/m</small></div></li>
-    					<li class="info">2 row section for you package information. You can include all details or icons</li>
-    					<li class="features first">Up To 25 Projects</li>
-    					<li class="features">10GB Storage</li>
-    					<li class="features">Other info</li>
-    					<li class="features last btn btn-secondary btn-wide"><a href="#">Get Started</a></li>
-    				</ul>
-          </div>
-          
-        </div>
-        
-      </div>
-    </section>
     
-    
-    <section id="invite" class="pad-lg light-gray-bg">
+    <section id="cadastro" class="pad-lg light-gray-bg">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center">
-            <i class="fa fa-envelope-o margin-40"></i>
-            <h2 class="black">Get the invite</h2>
+            <i class="fa fa-user margin-40"></i>
+            <h2 class="black">Cadastre sua ong</h2>
             <br />
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
+            <p class="black">Deixe sua ong disponível para receber doações. Tudo por nossa conta, basta nos dizer quem você é e sua informação bancária.</p>
             <br />
             
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <form role="form">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+                    <input type="email" class="form-control" placeholder="Coloque seu E-mail">
                   </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Request Invite</button>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Coloque sua senha">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Token do PagSeguro">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="O nome da sua ONG">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Descrição">                    
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="URL do seu site">                    
+                  </div>
+                  <div class="form-group">
+                    <input type="file" class="form-control" placeholder="Imagem 200x200">
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
                 </form>
               </div>
             </div><!--End Form row-->
 
           </div>
         </div>
-      </div>
-    </section>
-    
-    
-    <section id="press" class="pad-sm">
-      <div class="container">
-        
-        <div class="row margin-30 news-container">
-          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.8s">
-            <a href="#" target="_blank">
-            <img class="news-img pull-left" src="img/press-01.jpg" alt="Tech Crunch">
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.<br /> 
-            <small><em>Tech Crunch - January 15, 2015</em></small></p>
-            </a>
-          </div>
-        </div>
-        
-        <div class="row margin-30 news-container">
-          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="1.2s">
-            <a href="#" target="_blank">
-            <img class="news-img pull-left" src="img/press-02.jpg" alt="Forbes">
-            <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut. <br /> 
-            <small><em>Forbes - Feb 25, 2015</em></small></p>
-            </a>
-          </div>
-        </div>
-        
       </div>
     </section>
     

@@ -30,8 +30,7 @@ h1 {
 h2 {
   font-size: 40px;
   line-height: 40px;
-  etter-spacing: -0.5px;
-  color: #ffffff;
+  color: #228A75;
   font-weight: 700;
 }
 
@@ -127,7 +126,7 @@ a:hover, a:focus {
 }
 
 .btn-primary {
-  background-color:#70cbce;
+  background-color:#228A75;
   color: #ffffff;
 }
 
@@ -203,7 +202,7 @@ a:hover, a:focus {
 }
 
 .blue {
-  color: #70cbce;
+  color: #6CD8FF;
 }
 
 .white {
@@ -234,7 +233,7 @@ a:hover, a:focus {
 
 .navbar {
     border: 0px solid rgba(0, 0, 0, 0);
-    background: #70cbce;
+    background: #fff;
     margin: auto;
     min-height: 60px;
     padding-top: 8px;
@@ -248,13 +247,13 @@ a:hover, a:focus {
 }
 
 .navbar-inverse .navbar-nav > li > a, .navbar-nav a {
-    color: #ffffff;
+    color: #228A75;
     font-size: 14px;
     letter-spacing: 1px;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #ffffff;
+    color: #6CD8FF;
     opacity: 0.6;
 }
 
@@ -265,7 +264,7 @@ a:hover, a:focus {
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #4ec3cd;
+    border-color: #fff;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -273,7 +272,10 @@ a:hover, a:focus {
 }
 
 .logo img {
-	margin-top: 6px;
+	width: 100px;
+}
+.logo2 img{
+  width: 200px;
 }
 
 
@@ -282,7 +284,7 @@ a:hover, a:focus {
    Main styles
    ========================================================================== */
 header {
-  background: url(../img/header-bg.jpg) no-repeat center center;
+  background: url(../img/header.jpg) no-repeat center center;
   width: 100%;
   padding: 20px 10px 60px 10px;
   height: 100vh;
@@ -370,7 +372,7 @@ header {
 
 
 #be-the-first {
-  background: url(../img/be-the-first-bg.jpg) #231f20 no-repeat center center fixed;
+  background: url(../img/be-the-first-bg.jpg;) #231f20 no-repeat center center fixed;
   min-height: 300px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -417,7 +419,7 @@ hr.line {
   background: #f2f2f2;
 }
 
-.fa-envelope-o {
+.fa-user {
   color: #4ec3cd;
   font-size: 22px;
   display: block;
@@ -670,6 +672,14 @@ footer {
 }   
 
 
+.title-box{
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.title-modal{
+  padding: 20px;
+}
 
 
 
