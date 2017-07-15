@@ -694,4 +694,19 @@ footer {
 .ongs-row{
   margin: 20px 0;
 }
+.backbranco{
+  background-color: #fff;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.backbranco img{
+  position: absolute;
+    left: 40%;
+    top: 35%;
+  height: 200px;
+}
 
