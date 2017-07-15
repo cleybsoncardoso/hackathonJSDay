@@ -10,7 +10,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-function createONG(uid, nome, Descricao, tokenPagSeguro, imagem) {
+function createONG(nome, Descricao, tokenPagSeguro, imagem) {
     firebase.database().ref('/ONG/' + uid).set({
         uid: uid,
         Nome: nome,
