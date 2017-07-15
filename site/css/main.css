@@ -681,5 +681,32 @@ footer {
   padding: 20px;
 }
 
+#ongs-page{
+  max-height: 150px;
+}
 
+.ongs-image{
+  border-right: 4px solid #6CD8FF;
+}
+.ongs-image img{
+  width: 100%;
+}
+.ongs-row{
+  margin: 20px 0;
+}
+.backbranco{
+  background-color: #fff;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.backbranco img{
+  position: absolute;
+    left: 40%;
+    top: 35%;
+  height: 200px;
+}
 
