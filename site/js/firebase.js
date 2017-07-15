@@ -10,26 +10,32 @@ var config = {
 };
 firebase.initializeApp(config);
 
-function createONG(uid, nome, Descricao, tokenPagSeguro, imagem) {
-    firebase.database().ref('/ONG/' + uid).set({
-        uid: uid,
+function createONG(email, senha, nome, Descricao, tokenPagSeguro, imagem) {
+    createUser(email, senha);
+    createElemento(nome, email, Descricao, tokenPagSeguro, imagem);
+}
+
+function createElemento(nome, email, Descricao, tokenPagSeguro, imagem) {
+    firebase.database().ref('/ONG/' + nome).set({
         Nome: nome,
+        Email: email,
         Descricao: Descricao,
         Token: tokenPagSeguro,
         Imagem: imagem
     });
-
 }
 
 function createUser(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
         console.log(error);
+        createUser(email, senha);
     });
 }
 
 function signIN(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         console.log(error);
+        signIN(email, password);
     });
 }
 

@@ -11,20 +11,23 @@ var app = new Vue({
             imagem: ""
         },
         email: '',
+        ONGs: [],
         senha: ''
     },
     methods:
     {
         cadatrar: function (event) {
             event.preventDefault();
-            getDadosUser((usuarioUID) => {
-                if (usuarioUID) {
-                    createONG(usuarioUID.uid, this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, this.ONG.imagem);
-                }
-            });
+            createONG(this.ONG.email, this.ONG.senha, this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, this.ONG.imagem);
+            this.ONG.email = "";
+            this.ONG.senha = "";
+            this.ONG.nome = "";
+            this.ONG.descricao = "";
+            this.ONG.pagSeguro = "";
+            this.ONG.imagem = "";
         },
         login: function () {
-            event.preventDefault();            
+            event.preventDefault();
             signIN(this.email, this.senha);
         },
         handleUpload: function (e, clear) {
