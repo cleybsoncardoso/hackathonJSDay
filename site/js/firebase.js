@@ -10,12 +10,12 @@ var config = {
 };
 firebase.initializeApp(config);
 
-function createONG(nome, Descricao, tokenPagSeguro, imagem) {
+function createONG(uid, nome, Descricao, tokenPagSeguro, imagem) {
     firebase.database().ref('/ONG/' + uid).set({
         uid: uid,
         Nome: nome,
         Descricao: Descricao,
-        Toekn: tokenPagSeguro,
+        Token: tokenPagSeguro,
         Imagem: imagem
     });
 
@@ -33,21 +33,10 @@ function signIN(email, password) {
     });
 }
 
-function getDadosUser() {
+function getDadosUser(callback) {
     // var firebase = inicialize();
     firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            console.log(uid);
-            var providerData = user.providerData;
-        } else {
-        }
+        callback(user);
     });
 }
 

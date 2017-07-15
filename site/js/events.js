@@ -9,14 +9,23 @@ var app = new Vue({
             descricao: "",
             site: "",
             imagem: ""
-        }
-
+        },
+        email: '',
+        senha: ''
     },
     methods:
     {
         cadatrar: function (event) {
             event.preventDefault();
-            createONG('uid3', this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, 'imagem');
+            getDadosUser((usuarioUID) => {
+                if (usuarioUID) {
+                    createONG(usuarioUID.uid, this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, this.ONG.imagem);
+                }
+            });
+        },
+        login: function () {
+            event.preventDefault();            
+            signIN(this.email, this.senha);
         },
         handleUpload: function (e, clear) {
             var files = e.target.files;
