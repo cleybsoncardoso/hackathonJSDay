@@ -710,3 +710,12 @@ footer {
   height: 200px;
 }
 
+.imagem-content{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 20px auto;
+}

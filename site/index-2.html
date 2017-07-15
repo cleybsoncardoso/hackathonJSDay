@@ -184,7 +184,9 @@
                     <input type="text" class="form-control" placeholder="URL do seu site" v-model="ONG.site" required>
                   </div>
                   <div class="form-group">
-                    <input type="file" class="form-control" placeholder="Imagem 200x200">
+                    <input type="file" class="form-control" placeholder="Imagem 200x200" @change="handleUpload">
+                  </div>
+                  <div v-show="ONG.imagem" class="imagem-content" v-bind:style="{ backgroundImage: 'url(' + ONG.imagem + ')' }">
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg" @click="cadatrar($event)">Cadastrar</button>
                 </form>
