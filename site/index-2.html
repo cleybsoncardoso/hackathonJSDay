@@ -29,7 +29,7 @@
   <script src="js/modernizr-2.7.1.js"></script>
 
 </head>
-  
+
 <body onload="hideloader()">
   <div class="backbranco">
     <img src="img/internet_animated.svg" alt="">
@@ -48,7 +48,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#cadastro" class="scroll">Cadastro</a></li>
-            <li><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
+            <li v-if="usuario == ''"><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
+            <li v-if="usuario != ''"><a>Painel</a></li>
           </ul>
         </div>
         <!--/.navbar-collapse -->
@@ -83,7 +84,9 @@
             <a class="logo2" href="index.html"><img src="img/LarosLogo.png" alt="Logo"></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
-            <a href="#cadastro" class="scroll">Cadastro</a>&nbsp; &nbsp;<a data-toggle="modal" data-target="#LoginModal">Login</a>
+            <a href="#cadastro" class="scroll">Cadastro</a>&nbsp; &nbsp;
+            <a v-if="usuario == ''" data-toggle="modal" data-target="#LoginModal">Login</a>
+            <a v-if="usuario != ''">Painel</a></li>
           </div>
         </div>
 
@@ -231,11 +234,11 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script>
-      function hideloader(){
-        console.log('entrou');
-        $('.backbranco').hide();
-      }
-    </script>
+    function hideloader() {
+      console.log('entrou');
+      $('.backbranco').hide();
+    }
+  </script>
   <script>
     window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
   </script>

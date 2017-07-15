@@ -10,6 +10,7 @@ var app = new Vue({
             site: "",
             imagem: ""
         },
+        usuario: "",
         email: '',
         ONGs: [],
         senha: ''
@@ -51,5 +52,10 @@ var app = new Vue({
                 // this.error.message = "Formato de imagem inválido";
             }
         },
+    },
+    created: () => {
+        getDadosUser((usuario) => {
+            app.usuario = usuario.uid;
+        });
     }
 });
