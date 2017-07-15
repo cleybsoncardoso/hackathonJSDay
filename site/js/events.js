@@ -27,6 +27,9 @@ var app = new Vue({
             this.ONG.pagSeguro = "";
             this.ONG.imagem = "";
         },
+        sair: function () {
+            logout();
+        },
         login: function () {
             event.preventDefault();
             signIN(this.email, this.senha);
@@ -55,7 +58,10 @@ var app = new Vue({
     },
     created: () => {
         getDadosUser((usuario) => {
-            app.usuario = usuario.uid;
+            if (usuario) {
+
+                app.usuario = usuario.uid;
+            }
         });
     }
 });

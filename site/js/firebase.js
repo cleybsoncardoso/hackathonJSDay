@@ -34,11 +34,13 @@ function createUser(email, password) {
 
 function signIN(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        console.log(error);
-        signIN(email, password);
-        getDadosUser((userResp)=>{
-            if(userResp){
-                
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                window.location.href = "loged.html";
+            } else {
+                console.log('não logado');
+                // No user is signed in.
             }
         });
     });
@@ -62,5 +64,13 @@ function getDados(callback) {
         console.log(arr);
         callback(arr);
 
+    });
+}
+
+function logout() {
+    firebase.auth().signOut().then(function () {
+        window.location.href = "index.html";
+    }, function (error) {
+        console.log(error.message);
     });
 }

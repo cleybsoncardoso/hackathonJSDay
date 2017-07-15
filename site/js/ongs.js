@@ -13,14 +13,19 @@ var app2 = new Vue({
             event.preventDefault();
             signIN(this.email, this.senha);
         },
-
+        sair: function () {
+            logout();
+        },
     },
     created: () => {
         getDados((ongs) => {
             app2.ONGs = ongs;
         });
         getDadosUser((usuario) => {
-            app2.usuario = usuario.uid;
+            if (usuario) {
+
+                app2.usuario = usuario.uid;
+            }
         });
     }
 });
