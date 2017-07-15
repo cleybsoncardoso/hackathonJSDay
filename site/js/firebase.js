@@ -28,7 +28,7 @@ function createElemento(nome, email, Descricao, tokenPagSeguro, imagem) {
 function createUser(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
         console.log(error);
-        createUser(email, senha);
+        createUser(email, password);
     });
 }
 
@@ -46,7 +46,7 @@ function getDadosUser(callback) {
     });
 }
 
-function getDados() {
+function getDados(callback) {
 
     var arr = [];
     var starCountRef = firebase.database().ref('/ONG/');
@@ -54,6 +54,6 @@ function getDados() {
         for (var key in snapshot.val()) {
             arr.push(snapshot.val()[key]);
         }
+        callback(arr);
     });
-    return arr;
 }
