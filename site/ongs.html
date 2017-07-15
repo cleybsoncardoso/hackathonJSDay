@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
   <meta charset="utf-8">
   <title>Laros</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
+
   <meta property="og:title" content="">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="">
-	<meta property="og:site_name" content="">
-	<meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/animate.css">
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet'
+    type='text/css'>
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
   <script src="assets/js/vue.js"></script>
   <script src="js/firebase.js"></script>
-  <script src="js/ongs.js"></script>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
 
   <script src="js/modernizr-2.7.1.js"></script>
-  
+
 </head>
 
 <body onload="hideloader()">
-  <div id="app">
-  <div class="backbranco">
-    <img src="img/internet_animated.svg" alt="">
-  </div>
+  <div id="app2">
 
-    
+    <div class="backbranco">
+      <img src="img/internet_animated.svg" alt="">
+    </div>
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -47,33 +50,34 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#cadastro" class="scroll">Cadastro</a></li>
-            <li><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
+            <li v-if="usuario == ''"><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
+            <li v-if="usuario != ''"><a>Painel</a></li>
           </ul>
-        </div><!--/.navbar-collapse -->
+        </div>
+        <!--/.navbar-collapse -->
       </div>
     </div>
     <div id="LoginModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="title-modal wow fadeInDown">
-                    <h2 class="section-title">Login</h2>
-                </div>
-                <div>
-                    <div class="row">
-                        <div class="col-xs-10 col-xs-offset-1 form-group">
-                            <input class="form-control input-lg" type="text" placeholder="E-mail">
-                        </div>
-                        <div class="col-xs-10 col-xs-offset-1">
-                            <input class="form-control input-lg input-block" type="password" placeholder="Senha">
-                        </div>
-                        <div class="col-xs-10 col-xs-offset-1 form-group">
-                            <a class="btn btn-lg btn-primary btn-block">Login</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="title-modal wow fadeInDown">
+            <h2 class="section-title">Login</h2>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-1 form-group">
+                <input class="form-control input-lg" type="text" placeholder="E-mail" v-model="email" required>
+              </div>
+              <div class="col-xs-10 col-xs-offset-1">
+                <input class="form-control input-lg input-block" type="password" placeholder="Senha" v-model="senha" required>
+              </div>
+              <div class="col-xs-10 col-xs-offset-1 form-group">
+                <a class="btn btn-lg btn-primary btn-block" @click="login($event)">Login</a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <header id="ongs-page">
       <div class="container">
@@ -82,128 +86,47 @@
             <a class="logo2" href="index.html"><img src="img/LarosLogo.png" alt="Logo"></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
-            <a href="#cadastro" class="scroll">Cadastro</a>&nbsp; &nbsp;<a data-toggle="modal" data-target="#LoginModal">Login</a>
-          </div>
-        </div>
-    </div>
-    </header>
-    
-    <section id="main-info" class="pad-xl">
-	    <div class="container">
-        <div class="row title-box">
-          <h2>Nossas ONGS</h2>
-        </div>
-            <ul class="list-unstyled">
-                <li class="row ongs-row">
-                    <div class="col-sm-4 ongs-image">
-                        <img src="img/wwf.jpg" alt="">
-                    </div>
-                    <div class="col-sm-8">
-                        <h3>WWF</h3>
-				                <p> O WWF-Brasil é uma ONG brasileira, participante de uma rede internacional e comprometida com a conservação da natureza dentro do contexto social e econômico brasileiro;</p>
-                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
-                        <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
-                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-                        <input type="hidden" name="currency" value="BRL" />
-                        <input type="hidden" name="receiverEmail" value="francesco2you@gmail.com" />
-                        <input type="hidden" name="iot" value="button" />
-                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-                        </form>
-<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
-                    </div>
-                </li>
-                <li class="row ongs-row">
-                    <div class="col-sm-4 ongs-image">
-                        <img src="img/greenpeace.jpg" alt="">
-                    </div>
-                    <div class="col-sm-8">
-                        <h3>GREENPEACE</h3>
-				                <p>O Greenpeace chegou ao Brasil no mesmo ano em que o país abrigou a primeira e mais importante conferência ambiental da História, a Eco-92.</p>
-                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
-                        <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
-                        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-                        <input type="hidden" name="currency" value="BRL" />
-                        <input type="hidden" name="receiverEmail" value="francesco2you@gmail.com" />
-                        <input type="hidden" name="iot" value="button" />
-                        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-                        </form>
-                    </div>
-                </li>
-            </ul>
-		<!--div class="row">
-			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
-            <img src="img/wwf.jpg" alt="">
-				    <hr class="line blue">
-				    <h3>WWF</h3>
-				    <p> O WWF-Brasil é uma ONG brasileira, participante de uma rede internacional e comprometida com a conservação da natureza dentro do contexto social e econômico brasileiro;</p>
-            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>
-          </div>
-			    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
-            <img src="img/greenpeace.jpg" alt="">            
-				    <hr  class="line blue">
-				    <h3>GREENPEACE</h3>
-				    <p>O Greenpeace chegou ao Brasil no mesmo ano em que o país abrigou a primeira e mais importante conferência ambiental da História, a Eco-92.</p>
-            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>            
-          </div>
-			    <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
-            <img src="img/unicef.jpg" alt="">            
-				    <hr  class="line blue">
-				    <h3>UNICEF</h3>
-				    <p>O UNICEF acredita que, por meio da ação conjunta, é possível superar as iniquidades que ainda impedem o desenvolvimento pleno de meninas e meninos no Brasil.</p>
-            <a href="#be-the-first" class="btn btn-primary btn-lg scroll">Doe</a>            
-          </div>
-		    </div>
-	    </div-->
-    </section>
-    
-    <section id="cadastro" class="pad-lg light-gray-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <i class="fa fa-user margin-40"></i>
-            <h2 class="black">Cadastre sua ong</h2>
-            <br />
-            <p class="black">Deixe sua ong disponível para receber doações. Tudo por nossa conta, basta nos dizer quem você é e sua informação bancária.</p>
-            <br />
-            
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <form role="form">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Coloque seu E-mail">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Coloque sua senha">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Token do PagSeguro">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="O nome da sua ONG">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Descrição">                    
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="URL do seu site">                    
-                  </div>
-                  <div class="form-group">
-                    <input type="file" class="form-control" placeholder="Imagem 200x200">
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
-                </form>
-              </div>
-            </div><!--End Form row-->
-
+            <a v-if="usuario == ''" data-toggle="modal" data-target="#LoginModal">Login</a>
+            <a v-if="usuario != ''">Painel</a></li>
           </div>
         </div>
       </div>
+    </header>
+
+    <section id="main-info" class="pad-xl">
+
+      <div class="container">
+        <div class="row title-box">
+          <h2>Nossas ONGS</h2>
+        </div>
+        <ul class="list-unstyled">
+          <li class="row ongs-row" v-for="ong in ONGs">
+            <div class="col-sm-4 ongs-image">
+              <img :src="ong.Imagem" alt="">
+            </div>
+            <div class="col-sm-8">
+              <h3>{{ong.Nome}}</h3>
+              <p> {{ong.Descricao}}</p>
+              <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+              <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                <input type="hidden" name="currency" value="BRL" />
+                <input type="hidden" name="receiverEmail" value="francesco2you@gmail.com" />
+                <input type="hidden" name="iot" value="button" />
+                <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif" name="submit"
+                  alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+              </form>
+              <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+            </div>
+          </li>
+        </ul>
     </section>
-    
-    
+    </div>
+
+
     <footer>
       <div class="container">
-        
+
         <div class="row">
           <div class="col-sm-8 margin-20">
             <ul class="list-inline social">
@@ -213,23 +136,22 @@
               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
-          
+
           <div class="col-sm-4 text-right">
             <p><small>Copyright &copy; 2014. All rights reserved. <br>
 	            Created by <a href="http://visualsoldiers.com">Visual Soldiers</a></small></p>
           </div>
         </div>
-        
+
       </div>
     </footer>
-  </div>
-    
+
     <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
-      function hideloader(){
+      function hideloader() {
         console.log('entrou');
         $('.backbranco').hide();
       }
@@ -237,7 +159,9 @@
     <script src="js/wow.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-      
-   
-    </body>
+    <script src="js/ongs.js"></script>
+
+
+</body>
+
 </html>

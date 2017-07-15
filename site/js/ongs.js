@@ -1,17 +1,26 @@
 var app2 = new Vue({
-    el: '#app',
+    el: '#app2',
     data: {
-        ONGs: []
+        email: '',
+        ONGs: [],
+        senha: '',
+        usuario: ""
 
     },
     methods:
     {
-        
+        login: function (event) {
+            event.preventDefault();
+            signIN(this.email, this.senha);
+        },
+
     },
     created: () => {
-        getDados((ongs)=>{
-            this.ONGs = ongs;
+        getDados((ongs) => {
+            app2.ONGs = ongs;
         });
-        console.log(this.ONGs);
+        getDadosUser((usuario) => {
+            app2.usuario = usuario.uid;
+        });
     }
 });
