@@ -29,9 +29,11 @@
   <script src="js/modernizr-2.7.1.js"></script>
 
 </head>
-
-<body>
-
+  
+<body onload="hideloader()">
+  <div class="backbranco">
+    <img src="img/internet_animated.svg" alt="">
+  </div>
   <div id="app">
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -97,7 +99,7 @@
               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="row">
                   <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Encontre uma ONG</a>
+                    <a href="ongs.html" class="btn btn-secondary btn-lg scroll">Encontre uma ONG</a>
                   </div>
                   <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
                     <a href="#invite" class="btn btn-primary btn-lg scroll">Cadastre sua ONG</a>
@@ -227,7 +229,13 @@
   <!-- Javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script>
+      function hideloader(){
+        console.log('entrou');
+        $('.backbranco').hide();
+      }
+    </script>
   <script>
     window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
   </script>
