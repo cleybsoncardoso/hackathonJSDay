@@ -9,14 +9,27 @@ var app = new Vue({
             descricao: "",
             site: "",
             imagem: ""
-        }
-
+        },
+        usuario: "",
+        email: '',
+        ONGs: [],
+        senha: ''
     },
     methods:
     {
         cadatrar: function (event) {
             event.preventDefault();
-            createONG('uid3', this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, 'imagem');
+            createONG(this.ONG.email, this.ONG.senha, this.ONG.nome, this.ONG.descricao, this.ONG.pagSeguro, this.ONG.imagem);
+            this.ONG.email = "";
+            this.ONG.senha = "";
+            this.ONG.nome = "";
+            this.ONG.descricao = "";
+            this.ONG.pagSeguro = "";
+            this.ONG.imagem = "";
+        },
+        login: function () {
+            event.preventDefault();
+            signIN(this.email, this.senha);
         },
         handleUpload: function (e, clear) {
             var files = e.target.files;
@@ -39,5 +52,10 @@ var app = new Vue({
                 // this.error.message = "Formato de imagem inválido";
             }
         },
+    },
+    created: () => {
+        getDadosUser((usuario) => {
+            app.usuario = usuario.uid;
+        });
     }
 });
